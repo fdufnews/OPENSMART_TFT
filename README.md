@@ -1,8 +1,10 @@
 #MCUFRIEND_kbv
 
 fdufnews 2/2018
-Library delivered with OPENSMART TFT screen
-Not the MCUFRIEND up-to-date library (it doesn't work with the current MCUFRIEND one)
+Library delivered with OPENSMART TFT screen. It seems to be a copy (with some modification) of an old version of MCUFRIEND library.
+It is not the up-to-date MCUFRIEND library as the screen doesn't work with the current MCUFRIEND one.
+
+
 I have added support for the ILI9326 with the ATmega1284p for my own use
 
 Library for Uno 2.4, 2.8, 3.5, 3.6, 3.95 inch mcufriend  Shields
