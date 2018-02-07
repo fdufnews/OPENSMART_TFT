@@ -1,13 +1,5 @@
-#MCUFRIEND_kbv
-
-fdufnews 2/2018
-Library delivered with OPENSMART TFT screen. It seems to be a copy (with some modification) of an old version of MCUFRIEND library.
-It is not the up-to-date MCUFRIEND library as the screen doesn't work with the current MCUFRIEND one.
-
-
-I have added support for the ILI9326 with the ATmega1284p for my own use
-
-The screen interfaces on Port B and PortC
+fdufnews 7/2018
+Moveded the screen interfaces to Port B and PortC
 
 Device      |            Bus              | Bus
 ------------|-----------------------------|----------
@@ -16,7 +8,18 @@ ATmega1284p | PC8 PC7 PC6 PC5 PC4 PC3 PC2 | PB1 PB0
 
 It will slow down pixel transfert a little but will free I²C interface wich is located on PortC D1 and D0
 
+
+fdufnews 2/2018
+Library delivered with OPENSMART TFT screen. It seems to be a copy (with some modification) of an old version of MCUFRIEND library.
+It is not the up-to-date MCUFRIEND library as the screen doesn't work with the current MCUFRIEND one.
+
+
+I have added support for the ILI9326 with the ATmega1284p for my own use
+
 ----------------------------------------------------------------------------------------------------
+#MCUFRIEND_kbv
+
+
 Following is comment in original readme file
 Library for Uno 2.4, 2.8, 3.5, 3.6, 3.95 inch mcufriend  Shields
 
