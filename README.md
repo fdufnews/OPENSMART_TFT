@@ -1,10 +1,10 @@
 
-###Why I have made this library?
+### Why I have made this library?
 This library is delivered with OPENSMART TFT screens.
 
 I have added support for the ILI9326 with the ATmega1284p for my own use
 
-###History
+### History
 fdufnews 7/2018
 Moved the screen interface to PORTC and PORTB
 
@@ -31,7 +31,7 @@ CS     | PORTF3
 RS     | not used (connected to Reset of ATmega)
 
 ----------------------------------------------------------------------------------------------------
-#MCUFRIEND_kbv
+# MCUFRIEND_kbv
 
 Following is comment in original readme file
 Library for Uno 2.4, 2.8, 3.5, 3.6, 3.95 inch mcufriend  Shields
