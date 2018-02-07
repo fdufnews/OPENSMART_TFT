@@ -1,5 +1,5 @@
 fdufnews 7/2018
-Moveded the screen interfaces to Port B and PortC
+Moved the screen interfaces to Port B and PortC
 
 Device      |            Bus              | Bus
 ------------|-----------------------------|----------
