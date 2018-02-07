@@ -91,20 +91,26 @@
 #define RESET_PORT PORTD
 #define RESET_PIN  7
 
-#define DMASK         0x03
-#define NMASK         ~DMASK
+#define BMASK         0x03
+#define NMASK         ~BMASK
 #ifdef USE_OPENSMART_SHIELD_PINOUT
 #warning we are using OPEN-SMART breakout board
+//
+/* Screen is connected on PORTC and PORTB
+ *ILI9326     DB8 DB7 DB6 DB5 DB4 DB3 DB2| DB1 DB0
+ *                                       |
+ *ATmega1284p PC8 PC7 PC6 PC5 PC4 PC3 PC2| PB1 PB0
+*/
 // These are macros for I/O operations...
 
   // Write 8-bit value to LCD data lines
-  #define write_8(x) {                          \
-    PORTC = ((x)); } // STROBEs are defined later
+  #define write_8(x)    { PORTB = (PORTB & NMASK) | ((x) & BMASK); PORTC = (PORTC & BMASK) | ((x) & NMASK); }
+  // STROBEs are defined later
 
-  // Read 8-bit value from LCD data lines.  The signle argument
+  // Read 8-bit value from LCD data lines.  The single argument
   // is a destination variable; this isn't a function and doesn't
   // return a value in the conventional sense.
-  #define read_8() (PINC)
+  #define read_8()      ( (PINB & BMASK) | (PINC & NMASK) )
 
   // These set the PORT directions as required before the write and read
   // operations.  Because write operations are much more common than reads,
@@ -112,8 +118,8 @@
   // input before a read, and restore them back to the write state before
   // returning.  This avoids having to set it for output inside every
   // drawing method.  The default state has them initialized for writes.
-  #define setWriteDir() { DDRC = B11111111; }
-  #define setReadDir()  { DDRC = B00000000; }
+#define setWriteDir() { DDRB = (DDRB & NMASK) | BMASK; DDRC = (DDRC & BMASK) | NMASK;  }
+#define setReadDir()  { DDRB = (DDRB & NMASK) & NMASK; DDRC = (DDRC & BMASK) & BMASK;  }
 
 #else
 #define write_8(x)    { PORTB = (PORTB & NMASK) | ((x) & DMASK); PORTD = (PORTD & DMASK) | ((x) & NMASK); }
