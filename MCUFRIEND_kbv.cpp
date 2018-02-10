@@ -1,7 +1,3 @@
-/*
- * fdufnews 3/2/2018
- * constructor changed (lines 51 to 62) to adapt for a defective screen with some missing columns
- */
 //#define SUPPORT_0139   //costs about 238 bytes
 //#define SUPPORT_1289    //costs about 408 bytes
 //#define SUPPORT_1963    //only works with 16BIT bus anyway
@@ -49,16 +45,12 @@
 #endif
 
 #if defined USE_GFX_KBV
-// modified this line to correct TFT screen with missing columns
-//MCUFRIEND_kbv::MCUFRIEND_kbv():Adafruit_GFX(240, 400)
-MCUFRIEND_kbv::MCUFRIEND_kbv():Adafruit_GFX(240, 392)
+MCUFRIEND_kbv::MCUFRIEND_kbv():Adafruit_GFX(240, 400)
 {
     // we can not access GPIO pins until AHB has been enabled.
 }
 #else
-// modified this line to correct TFT screen with missing columns
-//MCUFRIEND_kbv::MCUFRIEND_kbv(int CS, int RS, int WR, int RD, int RST):Adafruit_GFX(240, 400)
-MCUFRIEND_kbv::MCUFRIEND_kbv(int CS, int RS, int WR, int RD, int RST):Adafruit_GFX(240, 392)
+MCUFRIEND_kbv::MCUFRIEND_kbv(int CS, int RS, int WR, int RD, int RST):Adafruit_GFX(240, 400)
 {
     // we can not access GPIO pins until AHB has been enabled.
 }
